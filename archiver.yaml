@@ -1,0 +1,24 @@
+tempDir: ./forestpin/archive/temp/
+archiveDir: ./forestpin/archive/
+
+# delete - delete the records
+# compress - compress the selected records and delete the records from the dir
+# compress_del - compress the records and then delete the compressed files on specified time period
+
+timezone: 5.5
+
+chains:
+  - id: first_chain
+    schedule:
+      type: daily
+      options:
+        hour: 15
+        minute: 49
+    maxRetries: 1
+    folders:
+      - id: processed
+        inputDir: ./forestpin/processed
+        compressKeep: 30
+        deleteKeep: 4
+        opMethod: compress_del
+        fileNameFormat: epoch 
