@@ -1,0 +1,3 @@
+[submodule "weya"]
+	path = weya
+	url = git@github.com:vpj/weya.git

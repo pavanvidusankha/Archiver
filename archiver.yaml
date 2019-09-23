@@ -7,18 +7,51 @@ archiveDir: ./forestpin/archive/
 
 timezone: 5.5
 
-chains:
-  - id: first_chain
-    schedule:
-      type: daily
-      options:
-        hour: 15
-        minute: 49
-    maxRetries: 1
-    folders:
-      - id: processed
-        inputDir: ./forestpin/processed
-        compressKeep: 30
-        deleteKeep: 4
-        opMethod: compress_del
-        fileNameFormat: epoch 
+ScheduledType: daily
+ScheduledHour: 11
+ScheduledMinute: 20
+
+folders:
+  - id: processed
+    inputDir: ./forestpin/processed
+    compressKeep: 30
+    deleteKeep: 4
+    opMethod: compress
+    fileNameFormat: epoch
+
+  - id: alerts
+    inputDir: ./forestpin/alerts
+    compressKeep: 30
+    deleteKeep: 4
+    opMethod: compress
+    fileNameFormat: date
+
+  - id: logs
+    inputDir: ./forestpin/logs
+    compressKeep: 30
+    deleteKeep: 4
+    opMethod: compress
+    fileNameFormat: datetime
+
+  - id: processed
+    inputDir: ./forestpin/processed - Copy
+    compressKeep: 30
+    deleteKeep: 4
+    opMethod: delete
+    fileNameFormat: epoch
+
+  - id: alerts
+    inputDir: ./forestpin/alerts - Copy
+    compressKeep: 30
+    deleteKeep: 4
+    opMethod: delete
+    fileNameFormat: date
+
+  - id: logs
+    inputDir: ./forestpin/logs - Copy
+    compressKeep: 30
+    deleteKeep: 4
+    opMethod: delete
+    fileNameFormat: datetime
+
+
